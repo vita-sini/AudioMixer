@@ -9,7 +9,7 @@ public class VolumePanel : MonoBehaviour
     private const string ButtonVolume = "ButtonVolume";
     private const string BackgroundMusicVolume = "BackgroundMusicVolume";
 
-    public AudioMixerGroup Mixer;
+    [SerializeField] private AudioMixerGroup Mixer;
 
     public void ChangeTotalVolume(float volume)
     {

@@ -727,11 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7ca171d8c80bf498a656d232ea9f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: -4184155421976353770, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
+  Mixer: {fileID: 24300002, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
   onMusic: {fileID: 21300000, guid: 55c10dadb521936429001e5abdd817e7, type: 3}
   offMusic: {fileID: 21300000, guid: d3ed1aedfbe26294685204749f84ade2, type: 3}
   MusicButton: {fileID: 373730094}
-  isMusicEnable: 0
 --- !u!1 &436142098
 GameObject:
   m_ObjectHideFlags: 0

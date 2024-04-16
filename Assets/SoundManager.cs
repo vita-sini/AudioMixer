@@ -7,16 +7,16 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    private const string BackgroundMusicVolume = "BackgroundMusicVolume";
+    private const string TotalVolume = "TotalVolume";
 
-    public AudioMixerGroup Mixer;
+    [SerializeField] private AudioMixerGroup Mixer;
 
-    public Sprite onMusic;
-    public Sprite offMusic;
+    [SerializeField] private Sprite onMusic;
+    [SerializeField] private Sprite offMusic;
 
-    public Image MusicButton;
+    [SerializeField] private Image MusicButton;
 
-    public bool isMusicEnable;
+    private bool isMusicEnable;
 
     private void Awake()
     {
@@ -37,13 +37,13 @@ public class SoundManager : MonoBehaviour
 
     private void EnableMusic()
     {
-        Mixer.audioMixer.SetFloat(BackgroundMusicVolume, 0);
+        Mixer.audioMixer.SetFloat(TotalVolume, 0);
         MusicButton.GetComponent<Image>().sprite = onMusic;
         isMusicEnable = true;
     }
     private void DisableMusic()
     {
-        Mixer.audioMixer.SetFloat(BackgroundMusicVolume, -80);
+        Mixer.audioMixer.SetFloat(TotalVolume, -80);
         MusicButton.GetComponent<Image>().sprite = offMusic;
         isMusicEnable = false;
     }
