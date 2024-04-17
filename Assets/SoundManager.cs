@@ -9,14 +9,14 @@ public class SoundManager : MonoBehaviour
 {
     private const string TotalVolume = "TotalVolume";
 
-    [SerializeField] private AudioMixerGroup Mixer;
+    [SerializeField] private AudioMixerGroup _mixer;
 
-    [SerializeField] private Sprite onMusic;
-    [SerializeField] private Sprite offMusic;
+    [SerializeField] private Sprite _onMusic;
+    [SerializeField] private Sprite _offMusic;
 
-    [SerializeField] private Image MusicButton;
+    [SerializeField] private Image _musicButton;
 
-    private bool isMusicEnable;
+    private bool _isMusicEnable;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class SoundManager : MonoBehaviour
 
     public void ToggleMusic()
     {
-        if (isMusicEnable == false)
+        if (_isMusicEnable == false)
         {
             EnableMusic();
         }
@@ -37,14 +37,14 @@ public class SoundManager : MonoBehaviour
 
     private void EnableMusic()
     {
-        Mixer.audioMixer.SetFloat(TotalVolume, 0);
-        MusicButton.GetComponent<Image>().sprite = onMusic;
-        isMusicEnable = true;
+        _mixer.audioMixer.SetFloat(TotalVolume, 0);
+        _musicButton.sprite = _onMusic;
+        _isMusicEnable = true;
     }
     private void DisableMusic()
     {
-        Mixer.audioMixer.SetFloat(TotalVolume, -80);
-        MusicButton.GetComponent<Image>().sprite = offMusic;
-        isMusicEnable = false;
+        _mixer.audioMixer.SetFloat(TotalVolume, -80);
+        _musicButton.sprite = _offMusic;
+        _isMusicEnable = false;
     }
 }

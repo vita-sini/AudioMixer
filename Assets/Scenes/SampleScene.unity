@@ -727,10 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c7ca171d8c80bf498a656d232ea9f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: 24300002, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
-  onMusic: {fileID: 21300000, guid: 55c10dadb521936429001e5abdd817e7, type: 3}
-  offMusic: {fileID: 21300000, guid: d3ed1aedfbe26294685204749f84ade2, type: 3}
-  MusicButton: {fileID: 373730094}
+  _mixer: {fileID: 24300002, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
+  _onMusic: {fileID: 21300000, guid: 55c10dadb521936429001e5abdd817e7, type: 3}
+  _offMusic: {fileID: 21300000, guid: d3ed1aedfbe26294685204749f84ade2, type: 3}
+  _musicButton: {fileID: 373730094}
 --- !u!1 &436142098
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aba3d8d6457c94dae64e48a75d419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 578829154}
+  _audioSource: {fileID: 578829154}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,7 +1979,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1744206578}
         m_TargetAssemblyTypeName: VolumePanel, Assembly-CSharp
         m_MethodName: ChangeBackgroundMusicVolume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2416,7 +2416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aba3d8d6457c94dae64e48a75d419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 578307474}
+  _audioSource: {fileID: 578307474}
 --- !u!1 &1141608646
 GameObject:
   m_ObjectHideFlags: 0
@@ -3138,7 +3138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87aba3d8d6457c94dae64e48a75d419c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 1728421450}
+  _audioSource: {fileID: 1728421450}
 --- !u!1 &1662966049
 GameObject:
   m_ObjectHideFlags: 0
@@ -3310,7 +3310,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1744206578}
         m_TargetAssemblyTypeName: VolumePanel, Assembly-CSharp
         m_MethodName: ChangeButtonVolume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3582,7 +3582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c111fd11c90a2745a3197752c06dd6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: 24300002, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
+  _mixer: {fileID: 24300002, guid: a8a0a58c7be37fe49976ed4e6a098140, type: 2}
+  _sliderTotalVolume: {fileID: 2033210280}
+  _sliderButtonVolume: {fileID: 1673129474}
+  _sliderBackgroundMusicVolume: {fileID: 877026244}
 --- !u!114 &1744206579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3753,7 +3756,7 @@ MonoBehaviour:
       - m_Target: {fileID: 1744206578}
         m_TargetAssemblyTypeName: VolumePanel, Assembly-CSharp
         m_MethodName: ChangeTotalVolume
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

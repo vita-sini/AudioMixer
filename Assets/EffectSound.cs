@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class EffectSound : MonoBehaviour
 {
-    [SerializeField] private AudioSource AudioSource;
+    [SerializeField] private AudioSource _audioSource;
 
     public void Playback()
     {
-        AudioSource.Play();
+        _audioSource.Play();
     }
 }

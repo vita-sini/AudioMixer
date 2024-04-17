@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class VolumePanel : MonoBehaviour
 {
@@ -9,20 +10,41 @@ public class VolumePanel : MonoBehaviour
     private const string ButtonVolume = "ButtonVolume";
     private const string BackgroundMusicVolume = "BackgroundMusicVolume";
 
-    [SerializeField] private AudioMixerGroup Mixer;
+    [SerializeField] private AudioMixerGroup _mixer;
+    [SerializeField] private Slider _sliderTotalVolume;
+    [SerializeField] private Slider _sliderButtonVolume;
+    [SerializeField] private Slider _sliderBackgroundMusicVolume;
 
-    public void ChangeTotalVolume(float volume)
+    private float _minValue = 0.0001f;
+    private float _maxValue = 1f;
+
+    private float _currentValueSlider;
+
+    private void Awake()
     {
-        Mixer.audioMixer.SetFloat(TotalVolume, Mathf.Lerp(-80, 0, volume));
+        _sliderTotalVolume.minValue = _minValue;
+        _sliderTotalVolume.maxValue = _maxValue;
+        _sliderButtonVolume.minValue = _minValue;
+        _sliderButtonVolume.maxValue = _maxValue;
+        _sliderBackgroundMusicVolume.minValue = _minValue;
+        _sliderBackgroundMusicVolume.maxValue = _maxValue;
     }
 
-    public void ChangeButtonVolume(float volume)
+    public void ChangeTotalVolume()
     {
-        Mixer.audioMixer.SetFloat(ButtonVolume, Mathf.Lerp(-80, 0, volume));
+        _currentValueSlider = _sliderTotalVolume.value;
+        _mixer.audioMixer.SetFloat(TotalVolume, Mathf.Log10(_currentValueSlider) * 20);
     }
 
-    public void ChangeBackgroundMusicVolume(float volume)
+    public void ChangeButtonVolume()
     {
-        Mixer.audioMixer.SetFloat(BackgroundMusicVolume, Mathf.Lerp(-80, 0, volume));
+        _currentValueSlider = _sliderButtonVolume.value;
+        _mixer.audioMixer.SetFloat(ButtonVolume, Mathf.Log10(_currentValueSlider) * 20);
+    }
+
+    public void ChangeBackgroundMusicVolume()
+    {
+        _currentValueSlider = _sliderBackgroundMusicVolume.value;
+        _mixer.audioMixer.SetFloat(BackgroundMusicVolume, Mathf.Log10(_currentValueSlider) * 20);
     }
 }
